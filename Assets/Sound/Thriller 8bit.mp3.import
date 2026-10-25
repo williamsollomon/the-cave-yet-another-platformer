@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dep6lhxhwuqp6"
+path="res://.godot/imported/Thriller 8bit.mp3-f5b9bd0d45a9ed45d3accaf349e0e9d1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Thriller 8bit.mp3"
+dest_files=["res://.godot/imported/Thriller 8bit.mp3-f5b9bd0d45a9ed45d3accaf349e0e9d1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

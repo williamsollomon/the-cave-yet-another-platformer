@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://by8gb6h3aiwtu"]
+
+[ext_resource type="Script" uid="uid://e68vquvp8bjm" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://t44pnwpwjlxo" path="res://Scenes/levels/level_root.tscn" id="2_bo1nx"]
+[ext_resource type="AudioStream" uid="uid://dep6lhxhwuqp6" path="res://Assets/Sound/Thriller 8bit.mp3" id="3_8gbba"]
+
+[node name="Main" type="Node2D" unique_id=1196382085]
+script = ExtResource("1_bo1nx")
+
+[node name="LevelRoot" parent="." unique_id=1866979947 instance=ExtResource("2_bo1nx")]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=978648791]
+stream = ExtResource("3_8gbba")
+volume_db = -11.254
+autoplay = true

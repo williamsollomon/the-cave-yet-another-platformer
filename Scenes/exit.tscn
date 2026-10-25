@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://c5vij4ipmvmuo"]
+
+[ext_resource type="Script" uid="uid://dl7ige2o78oyp" path="res://Scripts/exit.gd" id="1_ljsmn"]
+[ext_resource type="FontFile" uid="uid://me2jbhtssdw0" path="res://Assets/Fonts/VT323-Regular.ttf" id="2_4lqyq"]
+[ext_resource type="Texture2D" uid="uid://cbimj7yvf815b" path="res://Assets/Images/Exit/Shield-like Padlock - BRONZE - Spritesheet.png" id="2_650lm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lqyq"]
+atlas = ExtResource("2_650lm")
+region = Rect2(0, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnktl"]
+atlas = ExtResource("2_650lm")
+region = Rect2(14, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvpcg"]
+atlas = ExtResource("2_650lm")
+region = Rect2(154, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqsgg"]
+atlas = ExtResource("2_650lm")
+region = Rect2(168, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o715m"]
+atlas = ExtResource("2_650lm")
+region = Rect2(0, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cp2g"]
+atlas = ExtResource("2_650lm")
+region = Rect2(14, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxyes"]
+atlas = ExtResource("2_650lm")
+region = Rect2(28, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvbjs"]
+atlas = ExtResource("2_650lm")
+region = Rect2(42, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmiq1"]
+atlas = ExtResource("2_650lm")
+region = Rect2(56, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8rif"]
+atlas = ExtResource("2_650lm")
+region = Rect2(70, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th3bx"]
+atlas = ExtResource("2_650lm")
+region = Rect2(84, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udf4c"]
+atlas = ExtResource("2_650lm")
+region = Rect2(98, 0, 14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w33et"]
+atlas = ExtResource("2_650lm")
+region = Rect2(112, 0, 14, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_va8lc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lqyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnktl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvpcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqsgg")
+}],
+"loop": true,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o715m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxyes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvbjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmiq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8rif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th3bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udf4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w33et")
+}],
+"loop": false,
+"name": &"unlocked",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2b0s"]
+size = Vector2(14, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljsmn"]
+size = Vector2(14, 24)
+
+[node name="Exit" type="Area2D" unique_id=437165055]
+collision_layer = 2
+script = ExtResource("1_ljsmn")
+
+[node name="Label" type="Label" parent="." unique_id=1641047474]
+texture_filter = 1
+offset_left = -34.0
+offset_top = -27.0
+offset_right = 6.0
+offset_bottom = -4.0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("2_4lqyq")
+theme_override_font_sizes/font_size = 12
+text = "Pintu
+Terbuka!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=117910002]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_va8lc")
+animation = &"locked"
+autoplay = "locked"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085472483]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_v2b0s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1383572202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1699590330]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ljsmn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

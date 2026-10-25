@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://borjb0ppqrnsw"]
+
+[ext_resource type="Script" uid="uid://bvf2x4ryihpcq" path="res://Scripts/game_over_ui.gd" id="1_vvx4t"]
+[ext_resource type="FontFile" uid="uid://dvohyfed133xv" path="res://Assets/Fonts/JRK.otf" id="2_lth8f"]
+[ext_resource type="FontFile" uid="uid://me2jbhtssdw0" path="res://Assets/Fonts/VT323-Regular.ttf" id="3_qqn7r"]
+
+[node name="GameOverUI" type="CanvasLayer" unique_id=657001458]
+process_mode = 3
+script = ExtResource("1_vvx4t")
+
+[node name="Control" type="Control" parent="." unique_id=1401016898]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -644.0
+offset_top = -360.0
+offset_right = 644.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=714287880]
+visible = false
+offset_right = 520.0
+offset_bottom = 185.0
+color = Color(0, 0.30984184, 0.31059214, 1)
+
+[node name="Label" type="Label" parent="." unique_id=598862135]
+offset_left = 480.0
+offset_top = 136.0
+offset_right = 801.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("2_lth8f")
+theme_override_font_sizes/font_size = 171
+text = "GAME OVER"
+
+[node name="Restart" type="Button" parent="." unique_id=630111260]
+offset_left = 536.0
+offset_top = 480.0
+offset_right = 740.0
+offset_bottom = 584.0
+theme_override_fonts/font = ExtResource("3_qqn7r")
+theme_override_font_sizes/font_size = 47
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="." unique_id=2135559512]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.022000002
+anchor_right = 0.5
+anchor_bottom = 0.022000002
+offset_left = -104.0
+offset_top = 336.16
+offset_right = 96.0
+offset_bottom = 448.16
+theme_override_fonts/font = ExtResource("3_qqn7r")
+theme_override_font_sizes/font_size = 47
+text = "QUIT"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
